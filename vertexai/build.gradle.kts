@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization")
     id("com.android.library")
     id("io.gitlab.arturbosch.detekt")
+    id("com.vanniktech.maven.publish")
 }
 
 kotlin {
@@ -53,6 +54,12 @@ kotlin {
     }
 }
 
+kotlin {
+    android {
+        publishLibraryVariants("release")
+    }
+}
+
 android {
     namespace = "com.hexascribe.vertexai"
     compileSdk = libs.versions.config.compile.sdk.get().toInt()
@@ -62,5 +69,22 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+mavenPublishing {
+    pom {
+        developers {
+            developer {
+                id.set("osugikoji")
+                name.set("Koji Osugi")
+                url.set("https://github.com/osugikoji")
+            }
+            developer {
+                id.set("xyzwilliamxyz")
+                name.set("William")
+                url.set("https://github.com/xyzwilliamxyz")
+            }
+        }
     }
 }

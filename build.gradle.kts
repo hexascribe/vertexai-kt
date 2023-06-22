@@ -5,6 +5,7 @@ plugins {
     id("org.jetbrains.compose").version(libs.versions.composePlugin).apply(false)
     id("com.google.dagger.hilt.android").version(libs.versions.hilt).apply(false)
     id("io.gitlab.arturbosch.detekt").version(libs.versions.detektPlugin).apply(false)
+    id("com.vanniktech.maven.publish").version(libs.versions.publishPlugin).apply(false)
     kotlin("android").version(libs.versions.kotlinPlugin).apply(false)
     kotlin("multiplatform").version(libs.versions.kotlinPlugin).apply(false)
     kotlin("plugin.serialization").version(libs.versions.kotlinPlugin).apply(false)

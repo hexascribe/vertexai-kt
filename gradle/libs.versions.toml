@@ -1,0 +1,50 @@
+[versions]
+
+#Config
+config-compile-sdk = "33"
+config-min-sdk = "24"
+config-target-sdk = "33"
+
+#Libraries
+koin = "3.4.1"
+ktor = "2.3.1"
+activityCompose = "1.7.2"
+appCompat = "1.6.1"
+hilt = "2.44"
+hiltNavigationCompose = "1.0.0"
+
+#Plugin
+kotlinPlugin = "1.7.20"
+detektPlugin = "1.22.0"
+gradlePlugin = "8.0.2"
+composePlugin = "1.4.0"
+publishPlugin = "0.24.0"
+
+[libraries]
+
+#Network
+ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
+ktor-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor" }
+ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+#DI
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+
+#AndroidX
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+app-compat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+
+#Hilt
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "gradlePlugin" }

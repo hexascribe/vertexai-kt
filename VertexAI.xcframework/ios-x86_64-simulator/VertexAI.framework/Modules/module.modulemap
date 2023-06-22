@@ -1,0 +1,8 @@
+framework module VertexAI {
+    umbrella header "VertexAI.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}

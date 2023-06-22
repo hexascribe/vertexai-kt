@@ -1,6 +1,7 @@
 ![badge](http://img.shields.io/badge/-android-6EDB8D.svg?style=flat)
 ![badge](http://img.shields.io/badge/-ios-CDCDCD.svg?style=flat)
-[![License: MIT](https://img.shields.io/badge/license-Apache-blue)](https://opensource.org/license/apache-2-0/)
+![Maven Central](https://img.shields.io/maven-central/v/com.hexascribe/vertexai-kt)
+[![License: Apache](https://img.shields.io/badge/license-Apache-blue)](https://opensource.org/license/apache-2-0/)
 ![VertexAI-KT](art/logo.png)
 
 # VertexAI-KT

@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("io.gitlab.arturbosch.detekt")
     id("com.vanniktech.maven.publish")
+    id("com.chromaticnoise.multiplatform-swiftpackage")
 }
 
 kotlin {
@@ -86,5 +87,14 @@ mavenPublishing {
                 url.set("https://github.com/xyzwilliamxyz")
             }
         }
+    }
+}
+
+multiplatformSwiftPackage {
+    packageName("VertexAI")
+    swiftToolsVersion("5.3")
+    outputDirectory(File(rootDir, "/"))
+    targetPlatforms {
+        iOS { v("13") }
     }
 }

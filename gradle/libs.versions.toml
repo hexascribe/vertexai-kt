@@ -19,6 +19,7 @@ detektPlugin = "1.22.0"
 gradlePlugin = "8.0.2"
 composePlugin = "1.4.0"
 publishPlugin = "0.24.0"
+swiftPackageManagerPlugin = "2.0.3"
 
 [libraries]
 

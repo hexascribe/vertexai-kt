@@ -37,7 +37,7 @@ repositories {
 Then, simply import the dependency to your `build.gradle` dependencies:
 
 ```kotlin
-implementation("com.hexascribe:vertexai-kt:1.0.0")
+implementation("com.hexascribe:vertexai-kt:0.0.1")
 ```
 
 Take a look at the Kotlin code snippet below for an example of how to initialize and use one of the supported features:

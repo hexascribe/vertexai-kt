@@ -1,5 +1,7 @@
 package com.hexascribe.vertexai.features
 
+import com.hexascribe.vertexai.domain.VertexResult
+
 public interface TextRequest {
 
     /**
@@ -64,5 +66,5 @@ public interface TextRequest {
      * Execute text request.
      * @return one predicted completion of the given prompt.
      */
-    public suspend fun execute(prompt: String): Result<List<String>>
+    public suspend fun execute(prompt: String): VertexResult<String>
 }

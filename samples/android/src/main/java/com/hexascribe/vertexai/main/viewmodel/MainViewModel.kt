@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hexascribe.vertexai.BuildConfig
 import com.hexascribe.vertexai.VertexAI
+import com.hexascribe.vertexai.domain.VertexResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
@@ -36,10 +37,10 @@ class MainViewModel @Inject constructor() : ViewModel() {
         handleTextResult(result)
     }
 
-    private fun handleTextResult(result: Result<List<String>>) {
+    private fun handleTextResult(result: VertexResult<String>) {
         result
             .onSuccess {
-                println("Text Result Success: " + it.first())
+                println("Text Result Success: $it")
             }
             .onFailure {
                 println("Text Result Failure: " + it.message)

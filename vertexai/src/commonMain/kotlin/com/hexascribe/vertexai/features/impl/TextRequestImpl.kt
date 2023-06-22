@@ -2,6 +2,7 @@ package com.hexascribe.vertexai.features.impl
 
 import com.hexascribe.vertexai.data.repository.VertexRepository
 import com.hexascribe.vertexai.domain.TextParameters
+import com.hexascribe.vertexai.domain.VertexResult
 import com.hexascribe.vertexai.domain.toDataDto
 import com.hexascribe.vertexai.features.TextRequest
 import kotlinx.coroutines.CoroutineDispatcher
@@ -37,7 +38,7 @@ internal class TextRequestImpl(
         return this
     }
 
-    override suspend fun execute(prompt: String): Result<List<String>> {
+    override suspend fun execute(prompt: String): VertexResult<String> {
         this.params.prompt = prompt
         val requestDto = params.toDataDto()
         return vertexRepository.text(requestDto)

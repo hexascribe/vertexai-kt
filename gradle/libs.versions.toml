@@ -14,7 +14,7 @@ hilt = "2.44"
 hiltNavigationCompose = "1.0.0"
 
 #Plugin
-kotlinPlugin = "1.7.20"
+kotlinPlugin = "1.8.20"
 detektPlugin = "1.22.0"
 gradlePlugin = "8.0.2"
 composePlugin = "1.4.0"

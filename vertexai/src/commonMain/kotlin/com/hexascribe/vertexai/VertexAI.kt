@@ -9,14 +9,14 @@ import kotlin.native.concurrent.ThreadLocal
 /**
  * The [VertexAI] library aims to abstract all API call logic from VertexAI APIs.
  */
-public interface VertexAI {
+public abstract class VertexAI {
 
     /**
      * Fine-tuned to follow natural language instructions and is suitable for a variety of language tasks.
      * This request is ideal for tasks that can be completed with one API response, without the need
      * for continuous conversation.
      */
-    public fun textRequest(): TextRequest
+    public abstract fun textRequest(): TextRequest
 
     /**
      * A builder class for configuring and constructing an instance of [VertexAI].

@@ -5,7 +5,7 @@ import com.hexascribe.vertexai.di.module.LibraryModule
 import com.hexascribe.vertexai.features.TextRequest
 import org.koin.core.KoinApplication
 
-internal class VertexImpl(builderParams: BuilderParams): VertexAI {
+internal class VertexImpl(builderParams: BuilderParams): VertexAI() {
 
     val koinApp = KoinApplication.init()
 

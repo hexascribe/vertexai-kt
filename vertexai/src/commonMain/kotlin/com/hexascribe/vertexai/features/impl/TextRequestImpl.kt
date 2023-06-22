@@ -5,16 +5,10 @@ import com.hexascribe.vertexai.domain.TextParameters
 import com.hexascribe.vertexai.domain.VertexResult
 import com.hexascribe.vertexai.domain.toDataDto
 import com.hexascribe.vertexai.features.TextRequest
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
 
 internal class TextRequestImpl(
-    private val dispatcher: CoroutineDispatcher,
     private val vertexRepository: VertexRepository,
 ): TextRequest {
-
-    private val scope by lazy { CoroutineScope(SupervisorJob() + dispatcher) }
 
     private var params: TextParameters = TextParameters()
 

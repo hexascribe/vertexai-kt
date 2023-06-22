@@ -15,12 +15,12 @@ import kotlinx.serialization.json.Json
 
 internal class HttpClientProvider(
     private val builderParams: BuilderParams,
-    private val HttpClientEngine: HttpClientEngine = HttpEngineProvider.getEngine(),
+    private val httpClientEngine: HttpClientEngine = HttpEngineProvider.getEngine(),
 ) {
 
     fun provide(): HttpClient {
         val baseUrl = "${builderParams.region}-aiplatform.googleapis.com"
-        return HttpClient(HttpClientEngine) {
+        return HttpClient(httpClientEngine) {
             defaultRequest {
                 url {
                     host = baseUrl

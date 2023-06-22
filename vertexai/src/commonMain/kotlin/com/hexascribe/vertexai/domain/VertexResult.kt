@@ -26,7 +26,7 @@ public data class VertexResult<T : Any>(
      */
     public fun getOrThrow(): T {
         val exception = exception
-            ?: VertexException("")
+            ?: VertexException("Could not retrieve data")
         return data ?: throw exception
     }
 
@@ -81,7 +81,7 @@ public data class VertexResult<T : Any>(
      */
     public fun ensureSuccess() {
         if (!isSuccessful)
-            throw exception ?: VertexException("")
+            throw exception ?: VertexException("Operation has failed")
     }
 
     internal companion object {

@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 kotlin {

@@ -9,6 +9,8 @@ import kotlin.native.concurrent.ThreadLocal
 /**
  * The [VertexAI] library aims to abstract all API call logic from VertexAI APIs.
  */
+@Suppress("UnnecessaryAbstractClass")
+// Suppressed. Abstract is necessary to give better interoperability with Swift Code
 public abstract class VertexAI {
 
     /**
@@ -61,10 +63,10 @@ public abstract class VertexAI {
          */
         public fun build(): VertexAI {
             if (this.params.projectId.isEmpty()) {
-                throw IllegalStateException("Project ID is required. Please call the setProjectId method in the builder.")
+                error("Project ID is required. Please call the setProjectId method in the builder.")
             }
             if (this.params.accessToken.isEmpty()) {
-                throw IllegalStateException("Access Token is required. Please call the setAccessToken method in the builder.")
+                error("Access Token is required. Please call the setAccessToken method in the builder.")
             }
             return instance ?: VertexImpl(params).also { instance = it }
         }

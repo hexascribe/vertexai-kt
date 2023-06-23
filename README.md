@@ -83,7 +83,7 @@ var textRequest: TextRequest {
     vertexAI.textRequest()
 }
 Task.init {
-    let result = try await textRequest.execute(prompt: message)
+    let result = try await textRequest.execute(prompt: "Say this is a test")
     print(result.getOrThrow())
 }
 ```

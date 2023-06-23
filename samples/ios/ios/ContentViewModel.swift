@@ -16,8 +16,8 @@ final class ContentViewModel: ObservableObject {
     
     private var vertexAI: VertexAI {
         VertexAI.Builder()
-            .setProjectId(projectId: "YOUR_PROJECT_ID")
-            .setAccessToken(accessToken: "YOUR_ACCESS_TOKEN")
+            .setProjectId(projectId: Config.projectId)
+            .setAccessToken(accessToken: Config.accessToken)
             .build()
     }
     

@@ -1,4 +1,4 @@
-#  VertexAI-KT Android Sample
+#  VertexAI-KT iOS Sample
 
 ## Setup
 
@@ -6,7 +6,7 @@ You need to supply a Project ID and Access Token for running this sample success
 
 ### Steps
 
-1. Go to the `local.properties` file located in the root folder of this sample project;
+1. Go to the `EnvConfig.xcconfig` file located in the root folder of this sample project;
 
 2. Set your Access Token in the `ACCESS_TOKEN` variable. For more details, please refer to the [Google Cloud Platform Authentication](https://cloud.google.com/docs/authentication) documentation;
 

@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,6 +23,8 @@ import com.hexascribe.vertexai.main.viewmodel.MainViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
+    val output = mainViewModel.output.collectAsState().value
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -31,6 +34,7 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
         Text(text = "VertexAI Sample", style = MaterialTheme.typography.titleLarge)
         Spacer(modifier = Modifier.height(24.dp))
         OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
             value = mainViewModel.message.value,
             onValueChange = { mainViewModel.setMessage(it) }
         )
@@ -41,6 +45,10 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
         ) {
             Text(text = "Request")
         }
+        Spacer(modifier = Modifier.height(24.dp))
+        Text(text = "Output", style = MaterialTheme.typography.titleLarge)
+        Spacer(modifier = Modifier.height(24.dp))
+        Text(text = output, style = MaterialTheme.typography.bodySmall)
     }
 }
 

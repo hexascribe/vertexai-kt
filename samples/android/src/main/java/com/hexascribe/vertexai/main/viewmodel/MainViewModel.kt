@@ -8,6 +8,8 @@ import com.hexascribe.vertexai.VertexAI
 import com.hexascribe.vertexai.domain.VertexResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
@@ -28,6 +30,9 @@ class MainViewModel @Inject constructor() : ViewModel() {
             .setTemperature(0.8)
     }
 
+    private var _output = MutableStateFlow("")
+    val output: StateFlow<String> = _output
+
     fun setMessage(message: String) {
         this.message.value = message
     }
@@ -40,6 +45,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
     private fun handleTextResult(result: VertexResult<String>) {
         result
             .onSuccess {
+                _output.value = it
                 println("Text Result Success: $it")
             }
             .onFailure {

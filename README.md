@@ -52,8 +52,11 @@ val vertexAI by lazy {
 }
 val textRequest by lazy {
     vertexAI.textRequest()
-        .setMaxTokens(256)
+        .setModel("some-model")
         .setTemperature(0.8)
+        .setMaxTokens(256)
+        .setTopK(40)
+        .setTopP(0.8)
 }
 viewModelScope.launch {
     val result = textRequest.execute("Say this is a test")
@@ -81,6 +84,11 @@ var vertexAI: VertexAI {
 }
 var textRequest: TextRequest {
     vertexAI.textRequest()
+        .setModel(model: "some-model")
+        .setTemperature(temperature: 0.2)
+        .setMaxTokens(maxTokens: 256)
+        .setTopK(topK: 40)
+        .setTopP(topP: 0.8)
 }
 Task.init {
     let result = try await textRequest.execute(prompt: "Say this is a test")

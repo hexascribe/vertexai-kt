@@ -24,7 +24,7 @@ internal class HttpClientProvider(
             defaultRequest {
                 url {
                     host = baseUrl
-                    url { protocol = URLProtocol.HTTPS }
+                    protocol = URLProtocol.HTTPS
                     contentType(ContentType.Application.Json)
                 }
                 header("Authorization", "Bearer ${builderParams.accessToken}")

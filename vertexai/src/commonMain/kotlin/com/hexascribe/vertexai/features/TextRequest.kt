@@ -5,6 +5,13 @@ import com.hexascribe.vertexai.domain.VertexResult
 public interface TextRequest {
 
     /**
+     * Sets the ID of the [model] to use. The default value is "text-bison".
+
+     * @return The updated [TextRequest] object with the new [model] ID.
+     */
+    public fun setModel(model: String): TextRequest
+
+    /**
      * The [temperature] is used for sampling during response generation, which occurs when topP
      * and topK are applied. Temperature controls the degree of randomness in token selection.
      * Lower temperatures are good for prompts that require a more deterministic and less open-ended

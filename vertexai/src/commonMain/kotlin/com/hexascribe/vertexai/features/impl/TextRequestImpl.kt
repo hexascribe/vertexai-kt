@@ -12,6 +12,11 @@ internal class TextRequestImpl(
 
     private var params: TextParameters = TextParameters()
 
+    override fun setModel(model: String): TextRequest {
+        this.params.model = model
+        return this
+    }
+
     override fun setTemperature(temperature: Double): TextRequest {
         this.params.temperature = temperature
         return this
@@ -35,6 +40,6 @@ internal class TextRequestImpl(
     override suspend fun execute(prompt: String): VertexResult<String> {
         this.params.prompt = prompt
         val requestDto = params.toDataDto()
-        return vertexRepository.text(requestDto)
+        return vertexRepository.text(requestDto, params.model)
     }
 }

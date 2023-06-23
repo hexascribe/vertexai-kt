@@ -7,9 +7,9 @@ import com.hexascribe.vertexai.network.exception.VertexException
 
 internal class VertexRepository(private val vertexApi: VertexApi) {
 
-     suspend fun text(param: DataDto): VertexResult<String> {
+     suspend fun text(param: DataDto, model: String): VertexResult<String> {
           return try {
-               val result = vertexApi.text(param)
+               val result = vertexApi.text(param, model)
                     .getBodyOrThrow()
                     .predictions
                     .first().content

@@ -12,9 +12,9 @@ internal class VertexApi(
     private val apiExecutor: ApiExecutor
 ) {
 
-    suspend fun text(param: DataDto): ApiResult<PredictionsDto> {
+    suspend fun text(param: DataDto, model: String): ApiResult<PredictionsDto> {
         return apiExecutor
-            .setEndpoint("v1/projects/$projectId/locations/$region/publishers/google/models/text-bison:predict")
+            .setEndpoint("v1/projects/$projectId/locations/$region/publishers/google/models/$model:predict")
             .setHttpMethod(HttpMethod.Post)
             .setBody(param)
             .execute()

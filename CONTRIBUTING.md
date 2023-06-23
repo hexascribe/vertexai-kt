@@ -78,5 +78,5 @@ To verify checks, run the following commands on your local machine
 
 For code analysis and enforcing code guidelines
 ```shell
-$ ./gradlew :detektMetadataMain
+$ ./gradlew detektMetadataMain
 ```

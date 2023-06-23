@@ -172,6 +172,7 @@ __attribute__((swift_name("TextRequest")))
 */
 - (void)executePrompt:(NSString *)prompt completionHandler:(void (^)(VAIVertexResult<NSString *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("execute(prompt:completionHandler:)")));
 - (id<VAITextRequest>)setMaxTokensMaxTokens:(int32_t)maxTokens __attribute__((swift_name("setMaxTokens(maxTokens:)")));
+- (id<VAITextRequest>)setModelModel:(NSString *)model __attribute__((swift_name("setModel(model:)")));
 - (id<VAITextRequest>)setTemperatureTemperature:(double)temperature __attribute__((swift_name("setTemperature(temperature:)")));
 - (id<VAITextRequest>)setTopKTopK:(int32_t)topK __attribute__((swift_name("setTopK(topK:)")));
 - (id<VAITextRequest>)setTopPTopP:(double)topP __attribute__((swift_name("setTopP(topP:)")));

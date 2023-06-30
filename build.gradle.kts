@@ -7,6 +7,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version(libs.versions.detektPlugin).apply(false)
     id("com.vanniktech.maven.publish").version(libs.versions.publishPlugin).apply(false)
     id("com.chromaticnoise.multiplatform-swiftpackage").version(libs.versions.swiftPackageManagerPlugin).apply(false)
+    id("org.springframework.boot").version(libs.versions.spring).apply(false)
     kotlin("android").version(libs.versions.kotlinPlugin).apply(false)
     kotlin("multiplatform").version(libs.versions.kotlinPlugin).apply(false)
     kotlin("plugin.serialization").version(libs.versions.kotlinPlugin).apply(false)

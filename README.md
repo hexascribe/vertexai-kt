@@ -1,3 +1,4 @@
+![badge](http://img.shields.io/badge/-jvm-DB413D.svg?style=flat)
 ![badge](http://img.shields.io/badge/-android-6EDB8D.svg?style=flat)
 ![badge](http://img.shields.io/badge/-ios-CDCDCD.svg?style=flat)
 ![Maven Central](https://img.shields.io/maven-central/v/com.hexascribe/vertexai-kt)
@@ -23,6 +24,50 @@ To get started with the SDK, you'll need the following information for initializ
 
 It's important to have these details ready before proceeding with the SDK setup.
 
+### JVM setup
+
+Add the following line to import the library via Gradle. First, make sure Maven Central has been added:
+
+
+```kotlin
+repositories {
+    mavenCentral()
+    // ...
+}
+```
+
+Then, simply import the dependency to your `build.gradle` dependencies:
+
+```kotlin
+implementation("com.hexascribe:vertexai-kt-jvm:LATEST-VERSION")
+```
+
+Take a look at the Java code snippet below for an example of how to initialize and use one of the supported features:
+
+```
+VertexAI vertexAI = new VertexAI.Builder()
+        .setAccessToken("YOUR_ACCESS_TOKEN")
+        .setProjectId("YOUR_GOOGLE_CLOUD_PROJECT_ID")
+        .build();
+TextRequest textRequest = vertexAI.textRequest()
+        .setModel("some-model")
+        .setTemperature(0.8)
+        .setMaxTokens(256)
+        .setTopK(40)
+        .setTopP(0.8);
+textRequest.execute("Say this is a test", new VertexAI.Callback<String>() {
+    @Override
+    public void onSuccess(@NotNull String result) {
+        // handle success
+    }
+
+    @Override
+    public void onError(@NotNull Throwable throwable) {
+        // handle error
+    }
+});
+```
+
 ### Android setup
 
 Add the following line to import the library via Gradle. First, make sure Maven Central has been added:
@@ -38,7 +83,7 @@ repositories {
 Then, simply import the dependency to your `build.gradle` dependencies:
 
 ```kotlin
-implementation("com.hexascribe:vertexai-kt:1.0.0")
+implementation("com.hexascribe:vertexai-kt:LATEST-VERSION")
 ```
 
 Take a look at the Kotlin code snippet below for an example of how to initialize and use one of the supported features:

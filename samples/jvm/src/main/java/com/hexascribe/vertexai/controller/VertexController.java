@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/vertex")
 public class VertexController {
 
+    private final VertexService vertexService;
+
     @Autowired
-    private VertexService vertexService;
+    public VertexController(VertexService vertexService) {
+        this.vertexService = vertexService;
+    }
 
     @GetMapping("prediction")
     public ResponseEntity<String> getPrediction(@RequestParam(value = "prompt") String prompt

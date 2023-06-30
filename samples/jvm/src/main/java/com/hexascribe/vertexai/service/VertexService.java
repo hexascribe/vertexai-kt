@@ -11,8 +11,12 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class VertexService {
 
+    private final VertexAI vertexAI;
+
     @Autowired
-    private VertexAI vertexAI;
+    public VertexService(VertexAI vertexAI) {
+        this.vertexAI = vertexAI;
+    }
 
     private static final int MAX_TOKENS = 512;
 

@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "vertexai-kt"
 include(":vertexai")
 include(":samples:android")
+include(":samples:jvm")

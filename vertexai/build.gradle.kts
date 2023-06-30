@@ -9,7 +9,8 @@ plugins {
 
 kotlin {
     explicitApi()
-    android()
+    android { publishLibraryVariants("release") }
+    jvm()
     listOf(
         iosX64(),
         iosArm64(),
@@ -40,6 +41,11 @@ kotlin {
                 implementation(libs.ktor.okhttp)
             }
         }
+        val jvmMain by getting {
+            dependencies {
+                implementation(libs.ktor.java)
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -52,12 +58,6 @@ kotlin {
                 implementation(libs.ktor.ios)
             }
         }
-    }
-}
-
-kotlin {
-    android {
-        publishLibraryVariants("release")
     }
 }
 

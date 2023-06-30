@@ -12,6 +12,7 @@ activityCompose = "1.7.2"
 appCompat = "1.6.1"
 hilt = "2.44"
 hiltNavigationCompose = "1.0.0"
+spring = "3.1.0"
 
 #Plugin
 kotlinPlugin = "1.8.20"
@@ -25,6 +26,7 @@ swiftPackageManagerPlugin = "2.0.3"
 
 #Network
 ktor-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor" }
 ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 ktor-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor" }
@@ -45,6 +47,10 @@ app-compat = { group = "androidx.appcompat", name = "appcompat", version.ref = "
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+# Spring
+spring-boot-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "spring" }
+spring-boot-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradlePlugin" }

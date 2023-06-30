@@ -1,5 +1,6 @@
 package com.hexascribe.vertexai.features
 
+import com.hexascribe.vertexai.VertexAI
 import com.hexascribe.vertexai.domain.VertexResult
 
 public interface TextRequest {
@@ -74,4 +75,11 @@ public interface TextRequest {
      * @return one predicted completion of the given prompt.
      */
     public suspend fun execute(prompt: String): VertexResult<String>
+
+    /**
+     * Retrieve the predicted completion of the given [prompt], and passes it to the provided callback.
+     *
+     * @param callback The callback to receive the predicted completion of the given [prompt].
+     */
+    public fun execute(prompt: String, callback: VertexAI.Callback<String>)
 }

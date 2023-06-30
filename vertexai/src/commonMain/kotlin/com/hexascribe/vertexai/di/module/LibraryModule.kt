@@ -7,6 +7,7 @@ import com.hexascribe.vertexai.features.TextRequest
 import com.hexascribe.vertexai.features.impl.TextRequestImpl
 import com.hexascribe.vertexai.initializer.BuilderParams
 import com.hexascribe.vertexai.network.infrastructure.ApiExecutor
+import kotlinx.coroutines.Dispatchers
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -16,7 +17,7 @@ internal class LibraryModule(private val builderParams: BuilderParams) {
         featureModule + dataModule
 
     private val featureModule = module {
-        factory<TextRequest> { TextRequestImpl(get()) }
+        factory<TextRequest> { TextRequestImpl(Dispatchers.Default, get()) }
     }
 
     private val dataModule = module {

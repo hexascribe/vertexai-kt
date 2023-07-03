@@ -148,6 +148,8 @@ Take a look at our sample apps to learn how to use the SDK on different platform
 [Android Sample](samples/android)
 <br />
 [iOS Sample](samples/ios)
+<br />
+[JVM Sample](samples/jvm)
 
 ## 🤝 Contributions
 
